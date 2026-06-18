@@ -1542,10 +1542,12 @@ accepting connections."
                   (bash (concat (buffer-file-name) ".bash"))
                   (mksh (concat (buffer-file-name) ".mksh"))
                   (sh (concat (buffer-file-name) ".sh"))
+                  (zsh (concat (buffer-file-name) ".zsh"))
                   (t (buffer-file-name))))
         (list "-ln" (cl-case sh-shell
                       (bash "bash")
                       (mksh "mksh")
+                      (zsh "zsh")
                       (t "posix"))))))))
 
 (define-format-all-formatter snakefmt
