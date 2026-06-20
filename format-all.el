@@ -1365,7 +1365,8 @@ accepting connections."
   (:languages "Perl")
   (:features region)
   (:format
-   (format-all--buffer-easy
+   (format-all--buffer-hard
+    '(0 2) nil nil
     executable
     "--standard-error-output"
     (when region
