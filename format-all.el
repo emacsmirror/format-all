@@ -119,6 +119,15 @@
 (require 'inheritenv)
 (require 'language-id)
 
+(defconst format-all--language-id-definitions
+  '(("GDScript" gdscript-mode))
+  "Language definitions not yet available in language-id.")
+
+(cl-loop for (language . modes) in format-all--language-id-definitions
+         unless (assoc language language-id--definitions)
+         do (setf (alist-get language language-id--definitions nil nil #'equal)
+                  modes))
+
 (defgroup format-all nil
   "Lets you auto-format source code."
   :group 'format-all)
